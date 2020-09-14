@@ -5,7 +5,10 @@ import java.util.List;
 public class Mommifier {
     private List<String> vowels = Arrays.asList("a", "e", "i", "o", "u");
 
-    public String convert(String str) {
+    public String convert(String str) throws Exception {
+        if (str.isEmpty() || str.matches(".*[^a-zA-Z].*")) {
+            throw new Exception("String Error");
+        }
         if (getVowelsCount(str) < (0.3 * str.length())) {
             return str;
         }
