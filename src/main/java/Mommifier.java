@@ -4,12 +4,21 @@ import java.util.List;
 
 public class Mommifier {
     private List<String> vowels = Arrays.asList("a", "e", "i", "o", "u");
-
     public String convert(String str) {
-        if(getVowelsCount(str) < (0.3 * str.length())) {
+        if(getVowelsCount(str) < (0.3 * str.length())){
             return str;
         }
-        return null;
+        String repeatStr = "";
+        for (int index = 0; index < str.length(); index++) {
+            if(vowels.contains(String.valueOf(str.charAt(index)))){
+                if(String.valueOf(str.charAt(index)).equals(repeatStr)){
+                    return convert(str.substring(0, index) + "mommy" + str.substring(index));
+                }else {
+                    repeatStr = String.valueOf(str.charAt(index));
+                }
+            }
+        }
+        return str;
     }
 
     public int getVowelsCount(String str) {
@@ -19,6 +28,7 @@ public class Mommifier {
                 vowelsCount ++;
             }
         }
+
         return vowelsCount;
     }
 }
