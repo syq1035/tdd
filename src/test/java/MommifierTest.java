@@ -31,7 +31,7 @@ public class MommifierTest {
     }
 
     @Test
-    public void should_return_itself_when_the_string_is_not_all_string_or_empty() throws Exception {
+    public void should_throw_exception_when_the_string_is_not_all_string_or_empty() throws Exception {
         Mommifier mommifier = new Mommifier();
         assertThrows(Exception.class, () -> {
             mommifier.convert("sf3k4gd");
