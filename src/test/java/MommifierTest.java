@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MommifierTest {
 
@@ -22,10 +23,11 @@ public class MommifierTest {
     }
 
     @Test
-    public void should_return_itself_when_the_string_is_not_continuous_set_of_vowels() {
+    public void should_return_itself_when_the_string_is_not_continuous_set_of_vowels() throws Exception {
         Mommifier mommifier = new Mommifier();
         String str = "kepe";
         String expect = "kepe";
         assertEquals(expect, mommifier.convert(str));
     }
+
 }
