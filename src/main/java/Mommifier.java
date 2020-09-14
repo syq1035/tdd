@@ -13,10 +13,9 @@ public class Mommifier {
             if(vowels.contains(String.valueOf(str.charAt(index)))){
                 if(String.valueOf(str.charAt(index)).equals(repeatStr)){
                     return convert(str.substring(0, index) + "mommy" + str.substring(index));
-                }else {
-                    repeatStr = String.valueOf(str.charAt(index));
                 }
             }
+            repeatStr = String.valueOf(str.charAt(index));
         }
         return str;
     }
